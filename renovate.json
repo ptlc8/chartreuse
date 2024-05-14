@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabled": true,
+  "baseBranches": [
+    "main"
+  ],
+  "commitMessageSuffix": "({{updateType}})",
+  "extends": [
+    "config:best-practices",
+    "default:semanticCommits",
+    ":disableRateLimiting",
+    ":rebaseStalePrs"
+  ],
+  "dependencyDashboardTitle": "Renovate update dashboard",
+  "dependencyDashboardLabels": [
+    "Platform Automation"
+  ],
+  "enabledManagers": [
+    "pip-compile"
+  ],
+  "constraints": {
+    "python": "==3.8"
+  },
+  "pip-compile": {
+    "fileMatch": [
+      "^requirements\\.txt$"
+    ],
+    "enabled": true
+  }
+}

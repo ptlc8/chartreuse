@@ -19,12 +19,28 @@
     "pip-compile"
   ],
   "constraints": {
-    "python": "==3.7"
+    "python": "==3.7",
+    "pip-tools": ">=6.1.0,<7.0.0"
   },
   "pip-compile": {
     "fileMatch": [
       "^requirements\\.txt$"
     ],
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "description": "Automatically merge patch level updates for python",
+      "matchManagers": ["pip-compile"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "description": "Automatically merge minor level updates for python",
+      "matchManagers": ["pip-compile"],
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ]
 }

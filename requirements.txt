@@ -28,7 +28,7 @@ kubernetes==25.3.0
     # via wiremind-kubernetes
 mako==1.2.4
     # via alembic
-markupsafe==2.1.1
+markupsafe==2.1.0
     # via mako
 oauthlib==3.2.2
     # via requests-oauthlib
